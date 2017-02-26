@@ -1,0 +1,29 @@
+package com.example.lesson7_progressbar;
+
+import android.app.Activity;
+import android.os.Bundle;
+import android.view.Menu;
+import android.view.MenuItem;
+import android.widget.ProgressBar;
+
+public class MainActivity extends Activity {
+
+	@Override
+	protected void onCreate(Bundle savedInstanceState) {
+		super.onCreate(savedInstanceState);
+		setContentView(R.layout.activity_main);
+		ProgressBar pb = (ProgressBar) findViewById(R.id.progressBar4);
+		new Thread() {
+			public void run() {
+				// 模拟耗时任务
+				try {
+					Thread.sleep((int) (Math.random() * 2000));
+				} catch (InterruptedException e) {
+					e.printStackTrace();
+				}
+
+			};
+		}.start();
+	}
+
+}

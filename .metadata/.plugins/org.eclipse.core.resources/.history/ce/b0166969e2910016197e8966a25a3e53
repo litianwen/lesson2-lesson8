@@ -1,0 +1,73 @@
+package com.example.lesson8_demo;
+
+import java.util.List;
+
+import android.content.Context;
+import android.graphics.Color;
+import android.text.TextUtils;
+import android.view.View;
+import android.view.ViewGroup;
+import android.widget.BaseAdapter;
+import android.widget.TextView;
+
+public class QuestionAdapter extends BaseAdapter {
+
+	private Context mContext;
+	private List<Questions> mList;
+
+	public QuestionAdapter(Context context, List<Questions> list) {
+		this.mList = list;
+		this.mContext = context;
+	}
+
+	@Override
+	public int getCount() {
+		return mList.size();
+	}
+
+	@Override
+	public Questions getItem(int position) {
+		return mList.get(position);
+	}
+
+	@Override
+	public long getItemId(int position) {
+		return position;
+	}
+
+	@Override
+	public View getView(int position, View convertView, ViewGroup parent) {
+		ViewHolder holder;
+		if (convertView == null) {
+			convertView = View.inflate(mContext, R.layout.item_question, null);
+			holder = new ViewHolder(convertView);
+		} else
+			holder = (ViewHolder) convertView.getTag();
+		holder.bindView(getItem(position));
+		return convertView;
+	}
+
+	class ViewHolder {
+		TextView item_tv_quest, item_tv_answer;
+
+		public ViewHolder(View convertView) {
+			item_tv_quest = (TextView) convertView
+					.findViewById(R.id.item_tv_quest);
+			item_tv_answer = (TextView) convertView
+					.findViewById(R.id.item_tv_answer);
+			convertView.setTag(this);
+		}
+
+		public void bindView(Questions item) {
+			// 1.名称跑马灯
+			item_tv_quest.setText(item.getQuest());
+			item_tv_quest.setSelected(true);
+			String userAnswer = item.getUserAnswer();
+			if (TextUtils.isEmpty(userAnswer)) {
+				item_tv_answer.setText("未答");
+				item_tv_answer.setTextColor(Color.RED);
+			}
+		}
+
+	}
+}

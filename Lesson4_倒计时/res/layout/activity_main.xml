@@ -1,0 +1,22 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.example.lesson4_daojishi.MainActivity" >
+
+    <EditText
+        android:id="@+id/et_phonenum"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:digits="1234567890"
+        android:hint="输入手机号"
+        android:inputType="number" />
+
+    <Button
+        android:id="@+id/btn_send"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="发送" />
+
+</LinearLayout>

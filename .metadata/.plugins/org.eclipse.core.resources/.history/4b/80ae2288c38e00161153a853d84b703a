@@ -1,0 +1,44 @@
+package com.example.lesson7_scrollview;
+
+import android.app.Activity;
+import android.os.Bundle;
+import android.util.Log;
+import android.view.Menu;
+import android.view.MenuItem;
+import android.widget.ScrollView;
+
+public class MainActivity extends Activity {
+
+	ScrollView view;
+
+	@Override
+	protected void onCreate(Bundle savedInstanceState) {
+		super.onCreate(savedInstanceState);
+		setContentView(R.layout.activity_main);
+		view = (ScrollView) findViewById(R.id.view);
+		// 滑动到指定位置
+		// 这个方法必须等待view完全显示
+		// post 延迟操作
+		int width = view.getWidth();
+		Log.e("TAG", width + "  ");
+		final long startTime = System.currentTimeMillis();
+		// view在这里还并没有在完成
+		view.post(new Runnable() {
+
+			@Override
+			public void run() {
+				int width = view.getWidth();
+				Log.e("TAG", width + "  " + System.currentTimeMillis()
+						- startTime);
+				view.fullScroll(ScrollView.FOCUS_DOWN);
+			}
+		});
+	}
+	//
+	// @Override
+	// public void onWindowFocusChanged(boolean hasFocus) {
+	// super.onWindowFocusChanged(hasFocus);
+	// view.fullScroll(ScrollView.FOCUS_DOWN);
+	// }
+
+}

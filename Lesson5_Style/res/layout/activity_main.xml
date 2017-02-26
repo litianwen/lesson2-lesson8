@@ -1,0 +1,38 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.example.lesson5_style.MainActivity" >
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="输入用户名" />
+
+    <TextView
+        style="@style/TextView2"
+        android:text="登录" />
+
+    <TextView
+        style="@style/TextView2"
+        android:text="注册" />
+
+    <TextView
+        style="@style/TextViewButton"
+        android:layout_margin="100dp"
+        android:padding="20dp"
+        android:text="发送短信" />
+
+    <TextView
+        style="@style/TextViewButton"
+        android:text="验证短信" />
+
+    <TextView
+        style="@style/TextViewButton"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="81dp"
+        android:text="提交" />
+
+</LinearLayout>

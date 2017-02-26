@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<qualifiedTypeNameHistroy>
+<fullyQualifiedTypeName name="android.os.Parcelable"/>
+<fullyQualifiedTypeName name="android.os.Parcelable.Creator"/>
+<fullyQualifiedTypeName name="android.app.Activity"/>
+<fullyQualifiedTypeName name="android.view.View.OnClickListener"/>
+<fullyQualifiedTypeName name="android.content.Intent"/>
+<fullyQualifiedTypeName name="aaa.AActivity"/>
+<fullyQualifiedTypeName name="aaa.BActivity"/>
+<fullyQualifiedTypeName name="aaa.User"/>
+<fullyQualifiedTypeName name="android.app.Service"/>
+<fullyQualifiedTypeName name="android.content.ServiceConnection"/>
+<fullyQualifiedTypeName name="aidl.IMathAidlInterface"/>
+<fullyQualifiedTypeName name="aidl.IMathAidlInterface.Stub"/>
+<fullyQualifiedTypeName name="android.util.Log"/>
+<fullyQualifiedTypeName name="aidl.User"/>
+<fullyQualifiedTypeName name="android.widget.Button"/>
+<fullyQualifiedTypeName name="android.widget.Toast"/>
+<fullyQualifiedTypeName name="java.util.ArrayList"/>
+</qualifiedTypeNameHistroy>

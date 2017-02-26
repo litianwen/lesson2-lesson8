@@ -1,0 +1,32 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.example.lesson3_activityjump.MainActivity" >
+
+    <Button
+        android:id="@+id/next"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="跳转下一界面" />
+
+    <Button
+        android:id="@+id/back"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="返回上一界面" />
+
+    <Button
+        android:id="@+id/selectSex"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="选择性别" />
+
+    <Button
+        android:id="@+id/selectheight"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="选择身高" />
+
+</LinearLayout>

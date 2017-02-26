@@ -1,0 +1,28 @@
+package com.example.lesson7_imageswitcher;
+
+import android.app.Activity;
+import android.os.Bundle;
+import android.view.View;
+import android.widget.ImageSwitcher;
+import android.widget.ImageView;
+import android.widget.ViewSwitcher.ViewFactory;
+
+public class MainActivity extends Activity {
+
+	@Override
+	protected void onCreate(Bundle savedInstanceState) {
+		super.onCreate(savedInstanceState);
+		setContentView(R.layout.activity_main);
+		ImageSwitcher is = (ImageSwitcher) findViewById(R.id.is);
+		is.setFactory(new ViewFactory() {
+			// 用什么View来展示
+			@Override
+			public View makeView() {
+				ImageView iv = new ImageView(getBaseContext());
+				return iv;
+			}
+		});
+		is.setImageResource(R.drawable.a10);
+	}
+
+}

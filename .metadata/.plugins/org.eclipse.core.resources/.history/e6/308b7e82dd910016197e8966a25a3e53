@@ -1,0 +1,7 @@
+package com.example.lesson8_demo;
+
+public class Questions {
+
+	// 每一份考试的问题
+	private String quest;
+}

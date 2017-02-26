@@ -1,0 +1,42 @@
+package com.example.lesson8_notification;
+
+import android.app.Activity;
+import android.app.Notification;
+import android.os.Bundle;
+import android.support.v4.app.NotificationCompat;
+import android.view.View;
+
+public class MainActivity extends Activity {
+
+	@Override
+	protected void onCreate(Bundle savedInstanceState) {
+		super.onCreate(savedInstanceState);
+		setContentView(R.layout.activity_main);
+
+	}
+
+	public void clearNotification(View v) {
+
+	}
+
+	public void sendNotification(View v) {
+		// 他是 在v4包中的通知，用于16以下版本发送通知
+		// NotificationCompat
+		// 通知的创建
+		Notification.Builder builder = new Notification.Builder(this);
+		// 显示在通知条上的图标 必须的
+		builder.setSmallIcon(R.drawable.ic_launcher);
+		// 显示通知条上的文字 不是必须的
+		builder.setTicker("您有一条新的消息!!");
+
+		// 状态栏中的
+		builder.setContentTitle("大标题");
+		builder.setContentText("文本");
+		builder.setWhen(System.currentTimeMillis());
+		builder.setContentInfo("Info");
+		builder.setDefaults(Notification.DEFAULT_ALL);
+		// 生成对象
+		Notification notify = builder.build();
+	}
+
+}

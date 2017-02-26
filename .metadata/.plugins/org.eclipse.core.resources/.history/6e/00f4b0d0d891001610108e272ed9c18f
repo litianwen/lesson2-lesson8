@@ -1,0 +1,36 @@
+package com.example.lesson8_work;
+
+import android.app.Dialog;
+import android.content.Context;
+import android.os.Bundle;
+import android.view.MotionEvent;
+import android.view.View;
+import android.view.View.OnTouchListener;
+
+public class MyDialog extends Dialog {
+
+	public MyDialog(Context context) {
+		super(context, R.style.Dialog);
+	}
+
+	@Override
+	protected void onCreate(Bundle savedInstanceState) {
+		super.onCreate(savedInstanceState);
+		setContentView(R.layout.dialog);
+		findViewById(R.id.rl).setOnTouchListener(new OnTouchListener() {
+
+			@Override
+			public boolean onTouch(View v, MotionEvent event) {
+				dismiss();
+				return false;
+			}
+		});
+		findViewById(R.id.ll).setOnClickListener(new OnClickListener() {
+
+			@Override
+			public void onClick(View v) {
+
+			}
+		});
+	}
+}

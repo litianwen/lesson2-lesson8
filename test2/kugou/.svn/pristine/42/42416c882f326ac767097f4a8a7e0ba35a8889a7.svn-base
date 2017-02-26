@@ -1,0 +1,207 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+ <LinearLayout
+     android:layout_width="match_parent"
+     android:layout_height="wrap_content"
+     android:orientation="horizontal"
+     android:background="#1E93FF"
+     >
+   <Button
+       android:id="@+id/rx"
+       android:gravity="left"
+       android:layout_width="wrap_content"
+       android:layout_height="wrap_content"
+       android:text="X"
+       android:textSize="20dp"
+       android:textColor="@android:color/white"
+       android:background="@android:color/transparent"
+       />  
+     <TextView
+        android:padding="15dp"
+         android:textColor="@android:color/white"
+         android:textSize="20dp"
+         android:gravity="center"
+         android:id="@+id/RRegistered"
+         android:layout_width="match_parent"
+         android:layout_height="wrap_content"
+         android:text="REGISTERED"
+         />
+ </LinearLayout>
+ 
+ <TableLayout
+     android:paddingTop="10dp"
+     android:layout_width="match_parent"
+     android:layout_height="wrap_content"
+     android:orientation="vertical"
+     >
+     <TableRow>
+         
+         <TextView
+             android:layout_marginLeft="10dp"
+             android:layout_width="0dp"
+             android:layout_weight="1"
+             android:layout_height="wrap_content"
+             android:textSize="15dp"
+             android:text="账 号 :"
+             />
+         
+         <EditText
+             android:layout_weight="8"
+             android:maxLength="10"
+             android:paddingLeft="30dp"
+             android:background="@android:color/transparent"
+             android:layout_width="0dp"
+             android:layout_height="wrap_content"
+             android:hint="2-10位中文/字母/数字"
+             />
+     </TableRow>
+     <TableRow>
+         <View
+             android:layout_marginLeft="10dp"
+             android:layout_marginTop="3dp"
+             android:layout_width="match_parent"
+             android:layout_height="1dp"
+             android:layout_weight="1"
+             android:background="#E1E1E1"/>
+       
+         
+     </TableRow>
+     <TableRow>
+         
+         <TextView
+              android:layout_marginLeft="10dp"
+             android:layout_marginTop="10dp"
+             android:layout_width="0dp"
+             android:layout_height="wrap_content"
+             android:textSize="15dp"
+             android:layout_weight="1"
+             android:text="密 码 :"
+             />
+         
+         <EditText
+             android:gravity="left"
+             android:id="@+id/pass"
+             android:cursorVisible="true"
+             android:maxLength="16"
+                 android:layout_marginTop="10dp"
+             android:paddingLeft="30dp"
+             android:background="@android:color/transparent"
+             android:layout_width="0dp"
+             android:layout_height="wrap_content"
+             android:hint="6-16位字母/数字"
+             android:layout_weight="8"
+             />
+      <CheckBox
+          android:id="@+id/eye"
+          android:layout_marginRight="10dp"
+          android:layout_marginTop="15dp"
+          android:background="@android:color/transparent"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:button="@drawable/eye"
+         />   
+        
+     </TableRow>
+     <TableRow>
+         <View
+             android:layout_marginLeft="10dp"
+             android:layout_marginTop="3dp"
+             android:layout_width="match_parent"
+             android:layout_height="1dp"
+             android:layout_weight="1"
+             android:background="#E1E1E1"/>
+       
+     </TableRow>
+     
+  
+     
+ </TableLayout>
+ <LinearLayout
+     android:layout_width="match_parent"
+     android:layout_height="wrap_content"
+     android:orientation="horizontal"
+     >
+      <RadioGroup
+         android:layout_width="match_parent"
+         android:layout_height="wrap_content"
+         android:orientation="horizontal"
+         >
+   <RadioButton
+       android:id="@+id/R1"
+       android:layout_width="wrap_content"
+       android:layout_height="wrap_content"
+       android:layout_margin="5dp"
+       />  
+    
+   
+     <TextView
+         android:layout_marginLeft="10dp"
+         android:layout_gravity="center"
+         android:layout_width="wrap_content"
+         android:layout_height="wrap_content"
+         android:textSize="18dp"
+         android:text="男"/>
+     
+     <View
+         android:layout_marginLeft="200dp"
+         android:layout_marginTop="8dp"
+         android:layout_width="2dp"
+         android:layout_height="30dp"
+         android:background="#E1E1E1"/>
+    
+  
+   <RadioButton
+       android:id="@+id/R2"
+       android:layout_width="wrap_content"
+       android:layout_height="wrap_content"
+       android:layout_margin="5dp"
+       />  
+   
+     <TextView
+           android:layout_marginLeft="10dp"
+         android:layout_gravity="center"
+         android:textSize="18dp"
+         android:layout_width="wrap_content"
+         android:layout_height="wrap_content"
+         android:text="女"/>
+      </RadioGroup>
+ </LinearLayout>
+ <Button
+     android:id="@+id/finish"
+     android:layout_marginLeft="40dp"
+     android:layout_marginTop="30dp"
+     android:layout_width="400dp"
+     android:layout_height="wrap_content"
+     android:text="FINISH"
+     android:textColor="@android:color/white"
+     android:background="@drawable/landing"
+     
+     />
+ <TextView
+     android:textColor="@android:color/darker_gray"
+     android:layout_marginLeft="40dp"
+     android:layout_marginTop="20dp"
+     android:layout_width="match_parent"
+     android:layout_height="wrap_content"
+     android:text="点击完成表示你阅读并同意《用户协议》"
+     />
+ <View
+     android:layout_marginLeft="200dp"
+             android:layout_marginTop="3dp"
+             android:layout_width="80dp"
+             android:layout_height="1dp"
+             android:background="#E1E1E1"/>
+ 
+ 
+ <Button
+     android:layout_marginLeft="40dp"
+     android:background="@android:color/transparent"
+     android:layout_width="wrap_content"
+     android:layout_height="wrap_content"
+     android:text="使用手机注册"
+     android:textColor="#AB7CB0"
+     />
+</LinearLayout>

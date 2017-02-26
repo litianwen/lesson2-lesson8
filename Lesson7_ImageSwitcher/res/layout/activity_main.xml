@@ -1,0 +1,26 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="horizontal"
+    tools:context="com.example.lesson7_imageswitcher.MainActivity" >
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:onClick="up"
+        android:text="上一张" />
+
+    <ImageSwitcher
+        android:id="@+id/is"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" >
+    </ImageSwitcher>
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:onClick="down"
+        android:text="下一张" />
+
+</LinearLayout>

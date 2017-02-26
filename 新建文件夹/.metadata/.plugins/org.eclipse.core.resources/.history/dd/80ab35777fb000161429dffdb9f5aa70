@@ -1,0 +1,22 @@
+package aaa;
+
+public class CCC {
+<<<<<<< .mine
+	String bbb;
+	String msg;
+	
+	public void print(String msg) {
+		System.out.println(msg);
+	}
+	
+	public void print() {
+		System.out.println(msg);
+	}
+=======
+	String msg;
+
+>>>>>>> .r4
+	public void print() {
+		System.out.println(msg);
+	}
+}

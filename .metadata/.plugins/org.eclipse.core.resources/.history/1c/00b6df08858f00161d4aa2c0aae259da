@@ -1,0 +1,46 @@
+package com.example.lesson7_listview_simpleadapter;
+
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+
+import android.app.Activity;
+import android.os.Bundle;
+import android.widget.ArrayAdapter;
+import android.widget.ListView;
+import android.widget.SimpleAdapter;
+
+public class MainActivity extends Activity {
+
+	ListView lv;
+
+	// 数据源
+	// String[] data = { "zhangsan", "lisi", "wangwu", "zhaoliu", "tianqi",
+	// "wangba", "xiaojiujiu", "李四", "李五", "李六", "zhangsan", "lisi",
+	// "wangwu", "zhaoliu", "tianqi", "wangba", "xiaojiujiu", "李四", "李五",
+	// "李六", "zhangsan", "lisi", "wangwu", "zhaoliu", "tianqi", "wangba",
+	// "xiaojiujiu", "李四", "李五", "李六", "zhangsan", "lisi", "wangwu",
+	// "zhaoliu", "tianqi", "wangba", "xiaojiujiu", "李四", "李五", "李六", };
+
+	String[] names = { "范冰冰", "" };
+	String[] contents = { "简介：范冰冰，1981年9月16日生于山东青岛，华语影视女演员、歌手、制片人。1996年参演电视剧《女强人》。1998年主演电视剧《还珠格格》系列成名，2001年起投身大银幕。" };
+
+	@Override
+	protected void onCreate(Bundle savedInstanceState) {
+		super.onCreate(savedInstanceState);
+		setContentView(R.layout.activity_main);
+		lv = (ListView) findViewById(R.id.lv);
+		// 创建适配器
+		// ArrayAdapter<String> adapter = new ArrayAdapter<String>(this,
+		// android.R.layout.simple_list_item_1, data);
+		List<HashMap<String,Object>> data = new ArrayList<HashMap<String,Object>>();
+		//添加数据
+		
+		
+		SimpleAdapter adapter= new SimpleAdapter(this, data, R.layout.item_lv_star, from, to)
+		
+		
+		lv.setAdapter(adapter);
+	}
+}

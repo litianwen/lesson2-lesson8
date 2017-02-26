@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">Lesson7_Spinner</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="action_settings">Settings</string>
+	
+    <string-array name="select">
+        <item>结婚证</item>
+        <item>身份证</item>
+        <item>军官证</item>
+        <item>单身证</item>
+    </string-array>
+</resources>

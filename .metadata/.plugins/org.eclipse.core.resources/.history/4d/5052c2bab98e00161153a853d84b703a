@@ -1,0 +1,80 @@
+package com.example.lesson6_work1;
+
+import android.app.Activity;
+import android.os.Bundle;
+import android.util.Log;
+import android.view.MotionEvent;
+import android.view.View;
+import android.view.Window;
+import android.widget.FrameLayout;
+import android.widget.ImageView;
+
+public class MainActivity extends Activity {
+
+	View view;
+	public static final int DRAG = 1;
+	public static final int SCALE = 2;
+	int mode = 1;
+
+	@Override
+	protected void onCreate(Bundle savedInstanceState) {
+		super.onCreate(savedInstanceState);
+		getWindow().requestFeature(Window.FEATURE_NO_TITLE);
+		setContentView(R.layout.activity_main);
+		view = findViewById(R.id.view);
+	}
+
+	float length = 1;
+
+	// 重写
+	@Override
+	public boolean onTouchEvent(MotionEvent event) {
+		int x = (int) event.getX();
+		int y = (int) event.getY();
+		// 多指触控
+		switch (event.getAction() & event.getActionMasked()) {
+		case MotionEvent.ACTION_DOWN:
+			mode = DRAG;
+			break;
+		case MotionEvent.ACTION_POINTER_DOWN:
+			Log.e("TAG", "多指移动");
+			mode = SCALE;
+			// 两个手指开始的长度是多少呢？
+			length = calc(event);
+			break;
+		case MotionEvent.ACTION_UP:
+			length = 1;
+			break;
+		case MotionEvent.ACTION_MOVE:
+			if (mode == DRAG) {
+				// 1. 单个手指
+				FrameLayout.LayoutParams params = new FrameLayout.LayoutParams(
+						10, 10);
+				params.setMargins(x, y, 0, 0);
+				view.setLayoutParams(params);
+			} else {
+				// 2. 两个手指
+				float beilv = calc(event) / length;
+				float width = view.getWidth() * beilv;
+				float height = view.getHeight() * beilv;
+				Log.e("TAG", beilv + "  " + width + "  " + height);
+
+				FrameLayout.LayoutParams params = view.getLayoutParams();
+
+				view.setLayoutParams(params);
+			}
+			break;
+		}
+
+		return true;
+	}
+
+	// 类 Ponint
+	public float calc(MotionEvent event) {
+		float x1 = event.getX();
+		float y1 = event.getY();
+		float x2 = event.getX(1);
+		float y2 = event.getY(1);
+		return (float) Math.sqrt((x1 - x2) * (x1 - x2) + (y1 - y2) * (y1 - y2));
+	}
+}

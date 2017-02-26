@@ -1,0 +1,68 @@
+package com.example.lesson7_exlistview;
+
+import android.database.DataSetObserver;
+import android.view.View;
+import android.view.ViewGroup;
+import android.widget.BaseExpandableListAdapter;
+import android.widget.ExpandableListAdapter;
+
+public class MyExpandableAdapter extends BaseExpandableListAdapter {
+
+	String[] group = { "大学", "中学", "小学" };
+
+	String[][] child = { { "张三", "李四" }, { "王五", "赵六", "田七" }, { "马云" } };
+
+	// 最外层有多少个
+	@Override
+	public int getGroupCount() {
+		return group.length;
+	}
+
+	@Override
+	public int getChildrenCount(int groupPosition) {
+		return child[groupPosition];
+	}
+
+	@Override
+	public Object getGroup(int groupPosition) {
+		return null;
+	}
+
+	@Override
+	public Object getChild(int groupPosition, int childPosition) {
+		return null;
+	}
+
+	@Override
+	public long getGroupId(int groupPosition) {
+		return 0;
+	}
+
+	@Override
+	public long getChildId(int groupPosition, int childPosition) {
+		return 0;
+	}
+
+	@Override
+	public boolean hasStableIds() {
+		return false;
+	}
+
+	@Override
+	public View getGroupView(int groupPosition, boolean isExpanded,
+			View convertView, ViewGroup parent) {
+		return null;
+	}
+
+	@Override
+	public View getChildView(int groupPosition, int childPosition,
+			boolean isLastChild, View convertView, ViewGroup parent) {
+		return null;
+	}
+
+	@Override
+	public boolean isChildSelectable(int groupPosition, int childPosition) {
+		return false;
+	}
+
+}

@@ -1,0 +1,184 @@
+package com.example.lesson8_dialog;
+
+import java.util.ArrayList;
+import java.util.List;
+
+import android.app.Activity;
+import android.app.AlertDialog;
+import android.content.DialogInterface;
+import android.content.DialogInterface.OnClickListener;
+import android.content.DialogInterface.OnMultiChoiceClickListener;
+import android.os.Bundle;
+import android.view.View;
+import android.widget.ArrayAdapter;
+import android.widget.EditText;
+import android.widget.TextView;
+import android.widget.Toast;
+
+public class MainActivity extends Activity {
+
+	@Override
+	protected void onCreate(Bundle savedInstanceState) {
+		super.onCreate(savedInstanceState);
+		setContentView(R.layout.activity_main);
+	}
+
+	public void dialog1(View v) {
+		// 创建对象
+		MyDialog dialog = new MyDialog(this);
+		// 所有的弹出框都使用show方法来展示
+		dialog.show();
+		// 所有的对话框都使用dismiss来关闭
+		// dialog.dismiss();
+	}
+
+	public void dialog2(View v) {
+		// 警告对话框
+		// 创建
+		AlertDialog.Builder builder = new AlertDialog.Builder(this);
+		// 设置属性
+		builder.setTitle("提示框");
+		builder.setIcon(R.drawable.ic_launcher);
+		// 如果只是展示一个文本,只要设置了Message 就只会显示message
+		builder.setMessage("我是用来显示Message的");
+		// 积极的按钮 确定
+		// 可以连续.来调用方法
+		builder.setPositiveButton("ok", new OnClickListener() {
+
+			// 按钮上面的which永远返回-1
+			@Override
+			public void onClick(DialogInterface dialog, int which) {
+				Toast.makeText(MainActivity.this, "按了ok键", Toast.LENGTH_SHORT)
+						.show();
+			}
+		}).setNegativeButton("cancel", null)
+		// 中立的
+				.setNeutralButton("yes", null);
+		// 生成部分
+		AlertDialog dialog = builder.create();
+		dialog.show();
+	}
+
+	String[] array = new String[] { "音乐", "体育", "舞蹈", "看书" };
+
+	public void dialog3(View v) {
+		// 显示一个菜单的选项
+		// 匿名的类去创建
+		new AlertDialog.Builder(this).setTitle("菜单")
+				.setItems(array, new OnClickListener() {
+
+					// which 代表点击的第几项
+					// item点击后自动关闭，不需要按钮
+					@Override
+					public void onClick(DialogInterface dialog, int which) {
+						Toast.makeText(MainActivity.this, array[which],
+								Toast.LENGTH_SHORT).show();
+					}
+				})
+				// 有的时候不需要button
+				.create().show();
+	}
+
+	// 是哪个被选中
+	int choice;
+
+	public void dialog4(View v) {
+		// 显示一个单选的对话框
+		// 不会关闭对护框
+		new AlertDialog.Builder(this)
+				.setTitle("单选对话框")
+				// 如果给了Message，其他的content部分会被替换
+				// .setMessage("信息")
+				// 0代表默认哪一个被选中
+				.setSingleChoiceItems(array, 0, new OnClickListener() {
+
+					@Override
+					public void onClick(DialogInterface dialog, int which) {
+						choice = which;
+					}
+				}).setNegativeButton("取消", null)
+				.setPositiveButton("确定", new OnClickListener() {
+
+					@Override
+					public void onClick(DialogInterface dialog, int which) {
+						Toast.makeText(MainActivity.this, array[choice],
+								Toast.LENGTH_SHORT).show();
+					}
+				}).create().show();
+	}
+
+	public void dialog5(View v) {
+		final List<String> list = new ArrayList<String>();
+		list.add("体育");
+		list.add("舞蹈");
+		// 多选对话框
+		boolean[] checkedItems = { false, true, true, false };
+		new AlertDialog.Builder(this)
+				.setTitle("多选对话框")
+				.setMultiChoiceItems(array, checkedItems,
+						new OnMultiChoiceClickListener() {
+							// 点击后 不会关闭dialog
+							@Override
+							public void onClick(DialogInterface dialog,
+									int which, boolean isChecked) {
+								if (isChecked) {
+									list.add(array[which]);
+								} else {
+									list.remove(array[which]);
+								}
+							}
+						}).setPositiveButton("确定", new OnClickListener() {
+
+					@Override
+					public void onClick(DialogInterface dialog, int which) {
+						Toast.makeText(MainActivity.this, list.toString(),
+								Toast.LENGTH_SHORT).show();
+
+					}
+				}).create().show();
+	}
+
+	public void dialog6(View v) {
+		// 设置适配器
+		ArrayAdapter<String> adapter = new ArrayAdapter<String>(this,
+				android.R.layout.simple_list_item_1, array);
+		new AlertDialog.Builder(this).setTitle("适配器")
+				.setAdapter(adapter, new OnClickListener() {
+					// 点完就关闭，不需要button
+					@Override
+					public void onClick(DialogInterface dialog, int which) {
+						Toast.makeText(MainActivity.this, array[which],
+								Toast.LENGTH_SHORT).show();
+					}
+				}).create().show();
+	}
+
+	public void dialog7(View v) {
+		final EditText et = new EditText(this);
+		et.setHint("请输入密码");
+		new AlertDialog.Builder(this).setTitle("自定义对话框").setView(et)
+				.setPositiveButton("确定", new DialogInterface.OnClickListener() {
+
+					@Override
+					public void onClick(DialogInterface dialog, int which) {
+						Toast.makeText(MainActivity.this,
+								"你输入的密码是:" + et.getText().toString(),
+								Toast.LENGTH_SHORT).show();
+					}
+				}).create().show();
+	}
+
+	public void dialog8(View v) {
+		// 关闭对话框
+		View layout = getLayoutInflater()
+				.inflate(R.layout.dialog_dismiss, null);
+		TextView finish = (TextView) layout.findViewById(R.id.finish);
+		finish.setOnClickListener(new OnClickListener() {
+			
+			@Override
+			public void onClick(View v) {
+				
+			}
+		});
+	}
+}

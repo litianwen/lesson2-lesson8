@@ -1,0 +1,8 @@
+package com.example.lesson7_exlistview2;
+
+public class Group {
+	
+	//很多User
+	List<User> mList;
+	
+}

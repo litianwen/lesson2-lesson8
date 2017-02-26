@@ -1,0 +1,16 @@
+package com.example.lesson7_baseadapter;
+
+import java.util.List;
+
+import android.content.Context;
+import android.widget.BaseAdapter;
+
+import com.example.lesson7_baseadapter.MainActivity.Article;
+
+public class MyBaseAdapter2 extends BaseAdapter{
+	
+	public MyBaseAdapter2(Context context,List<Article> list) {
+		
+	}
+
+}

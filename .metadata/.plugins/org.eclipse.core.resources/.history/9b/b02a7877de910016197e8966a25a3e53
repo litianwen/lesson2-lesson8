@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">Lesson8_Demo</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="action_settings">Settings</string>
+
+    <string-array name="timu">
+        <item>有3堆火柴，分别有4,5,7根，两个人依次取火柴，每次只能取同一堆的火柴，最少拿一根，最多拿着堆内所有火柴，取走最后一根火柴，让对方无火柴可以取者为胜。请问现在谁会获胜?()</item>
+    </string-array>
+
+</resources>

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">kugou</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="action_settings">Settings</string>
+<string-array name="list">
+    <item >Ailee - 一天一天.mp3</item>
+    <item >Ailee - 你也一样.mp3</item>
+    <item >田馥甄 - 小幸运 - 2015如果巡回演唱会.mp3</item>
+    <item >T-ara - Just Now.mp3</item>
+</string-array>
+</resources>

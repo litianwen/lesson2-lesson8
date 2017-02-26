@@ -1,0 +1,13 @@
+package com.example.lesson7_exlistview2;
+
+import java.util.ArrayList;
+import java.util.List;
+import java.util.List;
+import java.util.List;
+
+public class Group {
+
+	// 很多User
+	List<User> mList = new ArrayList<User>();
+
+}

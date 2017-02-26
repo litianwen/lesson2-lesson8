@@ -1,0 +1,26 @@
+package com.example.lesson7_exlistview2;
+
+import java.util.ArrayList;
+import java.util.List;
+
+public class Group {
+
+	// 很多User
+	List<User> mList = new ArrayList<User>();
+
+	String name;
+	
+	public void addUser(User user)
+	{
+		mList.add(user);
+	}
+
+	public int getCount() {
+		int sum = 0;
+		for (User user : mList) {
+			if (user.isOnline)
+				sum++;
+		}
+		return sum;
+	}
+}

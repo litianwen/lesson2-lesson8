@@ -1,0 +1,39 @@
+package com.example.lesson8_progressdialog;
+
+import android.app.Activity;
+import android.app.ProgressDialog;
+import android.os.Bundle;
+import android.view.Menu;
+import android.view.MenuItem;
+import android.view.View;
+
+public class MainActivity extends Activity {
+
+	@Override
+	protected void onCreate(Bundle savedInstanceState) {
+		super.onCreate(savedInstanceState);
+		setContentView(R.layout.activity_main);
+	}
+
+	public void progress1(View v) {
+		final ProgressDialog dialog = new ProgressDialog(this);
+		dialog.setTitle("提示");
+		dialog.setMessage("正在加载");
+		// 设置为水平样式
+		dialog.setProgressStyle(ProgressDialog.STYLE_HORIZONTAL);
+		dialog.show();
+		new Thread() {
+			public void run() {
+				int index = 0;
+				while (index++ < dialog.getMax()) {
+					dialog.setProgress(index);
+					try {
+						Thread.sleep(100);
+					} catch (InterruptedException e) {
+						e.printStackTrace();
+					}
+				}
+			};
+		}.start();
+	}
+}

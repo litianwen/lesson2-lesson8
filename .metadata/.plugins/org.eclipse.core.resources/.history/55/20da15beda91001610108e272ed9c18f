@@ -1,0 +1,27 @@
+package com.example.lesson8_demo;
+
+import android.app.Dialog;
+import android.content.Context;
+import android.os.Bundle;
+
+public class StartDialog extends Dialog {
+
+	public StartDialog(Context context) {
+		super(context);
+	}
+
+	@Override
+	protected void onCreate(Bundle savedInstanceState) {
+		super.onCreate(savedInstanceState);
+		setContentView(R.layout.dialog_start);
+	}
+
+	// 打开大概2秒钟
+	@Override
+	public void show() {
+		super.show();
+		// 开个定时器
+
+	}
+
+}

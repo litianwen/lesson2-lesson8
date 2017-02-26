@@ -1,0 +1,50 @@
+package com.example.lesson7_seekbar;
+
+import android.app.Activity;
+import android.os.Bundle;
+import android.widget.SeekBar;
+import android.widget.SeekBar.OnSeekBarChangeListener;
+import android.widget.TextView;
+
+/**
+ * 需要用他调节音量大小
+ * 
+ * @author Administrator
+ *
+ */
+public class MainActivity extends Activity {
+	SeekBar seekBar;
+	TextView tv;
+
+	@Override
+	protected void onCreate(Bundle savedInstanceState) {
+		super.onCreate(savedInstanceState);
+		setContentView(R.layout.activity_main);
+		seekBar = (SeekBar) findViewById(R.id.seekBar1);
+		tv = (TextView) findViewById(R.id.tv);
+		seekBar.setMax(200);
+		seekBar.setProgress(50);
+		seekBar.setOnSeekBarChangeListener(new OnSeekBarChangeListener() {
+
+			@Override
+			public void onStopTrackingTouch(SeekBar seekBar) {
+				// 拖拽完毕
+			}
+
+			@Override
+			public void onStartTrackingTouch(SeekBar seekBar) {
+				// 开始拖拽时 用户刚好点上去
+			}
+
+			@Override
+			public void onProgressChanged(SeekBar seekBar, int progress,
+					boolean fromUser) {
+				// 每次进度改变都会调用
+				// 是否是用户改变的呢？？？
+				if (fromUser) {
+					tv.setText(progress + "/" + seekBar.getMax());
+				}
+			}
+		});
+	}
+}

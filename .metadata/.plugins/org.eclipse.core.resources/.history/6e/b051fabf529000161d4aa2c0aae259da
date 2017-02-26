@@ -1,0 +1,37 @@
+package com.example.lesson7_exlistview2;
+
+import java.util.ArrayList;
+import java.util.List;
+
+import android.app.Activity;
+import android.os.Bundle;
+import android.widget.ExpandableListView;
+
+public class MainActivity extends Activity {
+	List<Group> mList = new ArrayList<Group>();
+
+	@Override
+	protected void onCreate(Bundle savedInstanceState) {
+		super.onCreate(savedInstanceState);
+		setContentView(R.layout.activity_main);
+		ExpandableListView elv = (ExpandableListView) findViewById(R.id.elv);
+	}
+
+	public void initData() {
+		// 创建一些数据来测试
+		Group group1 = new Group();
+		User user1 = new User(R.drawable.img01, "马云", true, "后悔创建淘宝");
+		User user2 = new User(R.drawable.img02, "王健林", true, "先赚他一个亿");
+		User user3 = new User(R.drawable.img03, "麻花", false, "充值使你变得更强大");
+		group1.addUser(user1);
+		group1.addUser(user2);
+		group1.addUser(user3);
+		group1.name = "小学同学";
+
+		Group group2 = new Group();
+		User user4 = new User(R.drawable.img04, "张三", true, "后悔创建淘宝");
+		User user5 = new User(R.drawable.img05, "李四", false, "先赚他一个亿");
+		group1.addUser(user4);
+		group1.addUser(user5);
+	}
+}

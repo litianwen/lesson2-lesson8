@@ -1,0 +1,23 @@
+package com.example.lesson7_exlistview2;
+
+import java.util.ArrayList;
+import java.util.List;
+
+import android.app.Activity;
+import android.os.Bundle;
+import android.widget.ExpandableListView;
+
+public class MainActivity extends Activity {
+	List<Group> mList = new ArrayList<Group>();
+	@Override
+	protected void onCreate(Bundle savedInstanceState) {
+		super.onCreate(savedInstanceState);
+		setContentView(R.layout.activity_main);
+		ExpandableListView elv = (ExpandableListView) findViewById(R.id.elv);
+	}
+
+	public void initData() {
+		// 创建一些数据来测试
+		
+	}
+}

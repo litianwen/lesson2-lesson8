@@ -1,0 +1,25 @@
+package com.example.lesson7_autocompletetextview;
+
+import android.app.Activity;
+import android.os.Bundle;
+import android.view.Menu;
+import android.view.MenuItem;
+import android.widget.AutoCompleteTextView;
+
+public class MainActivity extends Activity {
+
+	String[] data = { "zhnagsan", "lisi", "wangwu", "zhaoliu", "tianqi",
+			"wangba", "xiaojiujiu" };
+
+	AutoCompleteTextView actv;
+
+	@Override
+	protected void onCreate(Bundle savedInstanceState) {
+		super.onCreate(savedInstanceState);
+		setContentView(R.layout.activity_main);
+		actv = (AutoCompleteTextView) findViewById(R.id.actv);
+		// 适配器
+
+	}
+
+}

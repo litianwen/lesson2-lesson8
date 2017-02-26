@@ -1,0 +1,9 @@
+package aaa;
+
+public class CCC {
+	String bbb;
+
+	public void print(String msg) {
+		System.out.println(msg);
+	}
+}

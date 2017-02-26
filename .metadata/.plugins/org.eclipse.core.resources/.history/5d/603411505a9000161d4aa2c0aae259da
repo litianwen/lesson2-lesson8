@@ -1,0 +1,18 @@
+package com.example.lesson7_gallery;
+
+import android.app.Activity;
+import android.os.Bundle;
+import android.view.Menu;
+import android.view.MenuItem;
+import android.widget.Gallery;
+
+public class MainActivity extends Activity {
+	Gallery gl;
+
+	@Override
+	protected void onCreate(Bundle savedInstanceState) {
+		super.onCreate(savedInstanceState);
+		setContentView(R.layout.activity_main);
+	}
+
+}

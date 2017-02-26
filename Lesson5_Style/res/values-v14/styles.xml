@@ -1,0 +1,21 @@
+<resources xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <style name="AppBaseTheme" parent="android:Theme.Holo.Light.DarkActionBar">
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:textColorHint">#80F0</item>
+    </style>
+
+    <style name="TextViewButton">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:background">@drawable/roundrect</item>
+        <item name="android:gravity">center</item>
+        <item name="android:textColor">@android:color/white</item>
+    </style>
+
+    <style name="TextView2" parent="@style/TextViewButton">
+        <item name="android:padding">10dp</item>
+        <item name="android:layout_margin">20dp</item>
+    </style>
+
+</resources>

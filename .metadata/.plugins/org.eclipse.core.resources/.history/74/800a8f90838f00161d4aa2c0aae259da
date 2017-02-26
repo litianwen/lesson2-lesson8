@@ -1,0 +1,25 @@
+package com.example.lesson7_listview_simpleadapter;
+
+import android.app.Activity;
+import android.os.Bundle;
+import android.widget.ArrayAdapter;
+import android.widget.ListView;
+
+public class MainActivity extends Activity {
+
+	ListView lv;
+	// 数据源
+	String[] data = { "zhangsan", "lisi", "wangwu", "zhaoliu", "tianqi",
+			"wangba", "xiaojiujiu", "李四", "李五", "李六" };
+
+	@Override
+	protected void onCreate(Bundle savedInstanceState) {
+		super.onCreate(savedInstanceState);
+		setContentView(R.layout.activity_main);
+		lv = (ListView) findViewById(R.id.lv);
+		// 创建适配器
+		ArrayAdapter<String> adapter = new ArrayAdapter<String>(this,
+				android.R.layout.simple_list_item_1, data);
+		lv.setAdapter(adapter);
+	}
+}

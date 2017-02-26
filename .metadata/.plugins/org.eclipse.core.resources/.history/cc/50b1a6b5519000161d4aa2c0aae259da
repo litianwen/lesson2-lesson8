@@ -1,0 +1,11 @@
+package com.example.lesson7_exlistview2;
+
+public class User {
+	
+	int imgId;
+	String nickname;
+	boolean isOnline;
+	String sign;
+	
+
+}

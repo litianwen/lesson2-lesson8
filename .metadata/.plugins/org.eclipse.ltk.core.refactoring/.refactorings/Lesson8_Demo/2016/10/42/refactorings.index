@@ -1,0 +1,7 @@
+1476428848137	Delete elements
+1476430441325	Extract method 'extracted'
+1476433707172	Extract method 'initSelectButton'
+1476434644018	Extract method '多选'
+1476434656255	Extract method '单选'
+1476434837191	Extract method '创建单选按钮'
+1476434856640	Extract method '创建多选按钮'

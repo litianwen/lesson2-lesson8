@@ -1,0 +1,24 @@
+package com.example.lesson7_multiautocompletetextview;
+
+import android.app.Activity;
+import android.os.Bundle;
+import android.widget.ArrayAdapter;
+import android.widget.MultiAutoCompleteTextView;
+
+public class MainActivity extends Activity {
+
+	MultiAutoCompleteTextView mactv;
+
+	// 数据源
+	String[] data = { "zhangsan", "lisi", "wangwu", "zhaoliu", "tianqi",
+			"wangba", "xiaojiujiu", "李四" };
+	ArrayAdapter<String> adapter;
+
+	@Override
+	protected void onCreate(Bundle savedInstanceState) {
+		super.onCreate(savedInstanceState);
+		setContentView(R.layout.activity_main);
+		mactv = (MultiAutoCompleteTextView) findViewById(R.id.mactv);
+	}
+
+}
