@@ -14,17 +14,19 @@ public class SelectorImageActivity extends Activity {
 	 *
 	 */
 
-	ImageView[] ivs = new ImageView[9];
-//	int[] ids = { R.id.iv1, R.id.iv2, R.id.iv3, R.id.iv4, R.id.iv5, R.id.iv6,
-//			R.id.iv7, R.id.iv8, R.id.iv9 };
-//	int[] imgId = { R.drawable.img01, R.drawable.img02, R.drawable.img03,
-//			R.drawable.img04, R.drawable.img05, R.drawable.img06,
-//			R.drawable.img07, R.drawable.img08, R.drawable.img09 };
+	static ImageView[] ivs = new ImageView[9];
+	static int[] ids = { R.id.iv1, R.id.iv2, R.id.iv3, R.id.iv4, R.id.iv5, R.id.iv6,
+			R.id.iv7, R.id.iv8, R.id.iv9 };
+	static int[] imgId = { R.drawable.img01, R.drawable.img02, R.drawable.img03,
+			R.drawable.img04, R.drawable.img05, R.drawable.img06,
+			R.drawable.img07, R.drawable.img08, R.drawable.img09 };
 
+	public static final int RESULT_OK = 2;
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-		try {
+		setContentView(R.layout.activity_seletorimg);
+		/*try {
 			setContentView(R.layout.class.getField("activity_seletorimg")
 					.getInt(null));
 		} catch (Exception e1) {
@@ -50,8 +52,7 @@ public class SelectorImageActivity extends Activity {
 						// // 内部类引用外部局部变量，需要final
 						int imgid;
 						try {
-							imgid = R.drawable.class.getField("img0" + finali)
-									.getInt(null);
+							imgid = R.drawable.class.getField("img0" + finali).getInt(null);
 							data.putExtra("id", imgid);
 							setResult(RESULT_OK, data);
 							finish();
@@ -64,22 +65,22 @@ public class SelectorImageActivity extends Activity {
 			} catch (Exception e) {
 				e.printStackTrace();
 			}
-		}
+		}*/
 
-		// for (int i = 0; i < ivs.length; i++) {
-		// ivs[i] = (ImageView) findViewById(ids[i]);
-		// final int finali = i;
-		// ivs[i].setOnClickListener(new OnClickListener() {
-		//
-		// @Override
-		// public void onClick(View v) {
-		// Intent data = getIntent();
-		// // 内部类引用外部局部变量，需要final
-		// data.putExtra("id", imgId[finali]);
-		// setResult(RESULT_OK, data);
-		// finish();
-		// }
-		// });
-		// }
+		 for (int i = 0; i < ivs.length; i++) {
+			 final int imgid = i;
+			 ivs[i] = (ImageView) findViewById(ids[i]);
+			 ivs[i].setOnClickListener(new OnClickListener() {
+		
+				 @Override
+				 public void onClick(View v) {
+					 Intent data = new Intent();
+					 // 内部类引用外部局部变量，需要final
+					 data.putExtra("id", imgId[imgid]);
+					 setResult(RESULT_OK, data);
+					 finish();
+				 }
+			 });
+		 }
 	}
 }

@@ -36,14 +36,14 @@
 
             <TextView android:text="用户名" />
 
-            <EditText android:layout_weight="1" />
+            <EditText android:layout_weight="1" android:id="@+id/username"/>
         </TableRow>
 
         <TableRow>
 
             <TextView android:text="密码" />
-
-            <EditText android:layout_weight="1" />
+			
+            <EditText android:layout_weight="1" android:id="@+id/password"/>
         </TableRow>
 
         <TableRow>
@@ -57,8 +57,24 @@
 
             <TextView android:text="E-Mail" />
 
-            <EditText android:layout_weight="1" />
+            <EditText android:layout_weight="1" android:id="@+id/email"/>
         </TableRow>
     </TableLayout>
-
+	<TableLayout 
+	    android:paddingTop="50dp"
+	    android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/ll">
+	    <TableRow>
+            <Button 
+                android:id="@+id/zhuce"
+                android:text="注册" 
+                android:layout_weight="1"/>
+            <Button 
+                android:id="@+id/tuichu"
+                android:text="退出" 
+                android:layout_weight="1"/>
+        </TableRow>
+	</TableLayout>
+    
 </RelativeLayout>

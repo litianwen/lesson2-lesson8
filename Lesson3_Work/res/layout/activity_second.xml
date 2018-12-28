@@ -1,0 +1,49 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    tools:context="com.example.lesson3_work.MainActivity" >
+    
+   <LinearLayout
+        android:id="@+id/ll"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:gravity="center"
+        android:orientation="vertical" >
+
+        <ImageView
+            android:id="@+id/iv1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/blank" />
+      
+    </LinearLayout>
+    <TableLayout 
+        android:layout_toLeftOf="@id/ll"
+        android:padding="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <TableRow>
+
+            <TextView android:text="用户名" />
+
+            <TextView android:layout_weight="1" android:id="@+id/username1"/>
+        </TableRow>
+
+        <TableRow>
+
+            <TextView android:text="密码" />
+
+            <TextView android:layout_weight="1" android:id="@+id/password1"/>
+        </TableRow>
+
+        <TableRow>
+
+            <TextView android:text="E-Mail" />
+
+            <TextView android:layout_weight="1" android:id="@+id/email1"/>
+        </TableRow>
+    </TableLayout>
+    
+</RelativeLayout>

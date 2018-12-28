@@ -6,7 +6,7 @@
 
     <uses-sdk
         android:minSdkVersion="15"
-        android:targetSdkVersion="21" />
+        android:targetSdkVersion="23" />
 
     <application
         android:allowBackup="true"
@@ -27,6 +27,7 @@
             android:label="选择头像"
             android:theme="@android:style/Theme.Dialog" >
         </activity>
+        <activity android:name="com.example.lesson3_work.SecondActivity"></activity>
     </application>
 
 </manifest>
